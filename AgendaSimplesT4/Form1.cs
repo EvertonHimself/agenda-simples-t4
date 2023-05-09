@@ -16,5 +16,12 @@ namespace AgendaSimplesT4
         {
             InitializeComponent();
         }
+
+        private void btnAddContato_Click(object sender, EventArgs e)
+        {
+            // Criar nosso primeiro contato (um OBJETO da classe Contato).
+            Contato objetoContato = new Contato();
+            lstContatos.Items.Add(objetoContato.ToString());
+        }
     }
 }

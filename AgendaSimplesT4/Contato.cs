@@ -34,9 +34,9 @@ namespace AgendaSimplesT4
             set 
             {
                 if (value.Length == 11) 
-                    Telefone = value;
+                    telefone = value;
                 else
-                    Telefone = "00-00000-0000";
+                    telefone = "00000000000";
             }
         }
 
@@ -45,7 +45,7 @@ namespace AgendaSimplesT4
         {
             PrimeiroNome = "José";
             Sobrenome = "Da Silva";
-            Telefone = "11-91234-5678";
+            Telefone = "11912345678";
         }
 
         // Sobrecarga do método construtor da classe.
@@ -59,7 +59,13 @@ namespace AgendaSimplesT4
         public override string ToString()
         {
             string saida = String.Empty;
+            saida += String.Format("{0}, {1}", PrimeiroNome, Sobrenome);
+            saida += String.Format("{0}-{1}-{2}", 
+                Telefone.Substring(0, 1), 
+                Telefone.Substring(2, 4), 
+                Telefone.Substring(7, 3));
 
+            return saida;
         }
     }
 }
